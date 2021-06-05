@@ -14,6 +14,7 @@ using Microsoft.OpenApi.Models;
 
 using HotelListing.Data;
 using Microsoft.EntityFrameworkCore;
+using HotelListing.Configurations;
 
 namespace HotelListing
 {
@@ -40,6 +41,9 @@ namespace HotelListing
                     .AllowAnyMethod()
                     .AllowAnyHeader());
             });
+
+
+            services.AddAutoMapper(typeof(MapperInitilizer));
 
             services.AddSwaggerGen(c =>
             {
